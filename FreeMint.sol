@@ -13,9 +13,12 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 // state that your contracts will act like / are the 
 // parent / inherited contract as such:
  contract YOURCONTRACT is ERC721, Ownable {
-    // and that you are using the Counters contract
-    using Counters for Counters.Counter;
-    
+   // and that you are using the Counters contract
+   using Counters for Counters.Counter;
+   // use this to initialize the "_tokenIdCounter"
+   // variable which will keep track of the individual tokens (NFTs.)
+   Counters.Counter private _tokenIdCounter;
+      
     // initiallize your smart contract with a constructor
     // (a line of code used only "once" in the creation of
     // your contract and never again) and name it, you must
